@@ -1,13 +1,6 @@
-require('./instantHello');
-var goodbye = require('./talk/goodbye');
-var talk = require('./talk');
+//In this video we learnt how to run npm,how it is used to create package.json 
+//files, install dependencies, how to manage dependencies, looking at different 
+//versions numbers that we go in all of those package dependencies, define and
+//run scripts using package.json file.   
 
-var question = require('./talk/question');
-
-talk.intro();
-talk.hello('Surekha');
-
-var answer = question.ask("What is the meaning of Life?");
-console.log(answer);
-
-goodbye();
+console.log("It works!");
