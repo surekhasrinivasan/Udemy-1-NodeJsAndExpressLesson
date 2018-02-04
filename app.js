@@ -1,6 +1,10 @@
-//In this video we learnt how to run npm,how it is used to create package.json 
-//files, install dependencies, how to manage dependencies, looking at different 
-//versions numbers that we go in all of those package dependencies, define and
-//run scripts using package.json file.   
+var express = require('express');
+var app = express();
 
-console.log("It works!");
+app.set('port',3000);
+
+var server = app.listen(app.get('port'), function(){
+    var port = server.address().port;
+    console.log("Magic happens on port" + port);    
+});
+//console.log('Me first!');
