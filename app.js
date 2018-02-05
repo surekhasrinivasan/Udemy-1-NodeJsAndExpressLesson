@@ -4,12 +4,8 @@ var path = require('path');
 
 app.set('port', process.env.PORT);
 
-app.get('/', function(request, response){
-    console.log("GET the homepage");
-    response
-            .status(200)
-            .sendFile(path.join(__dirname, 'public', 'index.html'));
-});
+//app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.get('/json', function(request, response){
     console.log("GET the json");
     response
