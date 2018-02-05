@@ -2,6 +2,8 @@ var express = require('express');
 var app = express();
 var path = require('path');
 
+var routes = require("./routes");
+
 app.set('port', process.env.PORT);
 
 app.use(function(request, response,next){
@@ -11,18 +13,7 @@ app.use(function(request, response,next){
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/json', function(request, response){
-    console.log("GET the json");
-    response
-            .status(200)
-            .json({"jsonData" :true});
-});
-app.get('/file', function(request, response){
-    console.log("GET the file");
-    response
-            .status(200)
-            .sendFile(path.join(__dirname, 'app.js'));
-});
+app.use('/api', routes);
 
 var server = app.listen(app.get('port'), function(){
     var port = server.address().port;
