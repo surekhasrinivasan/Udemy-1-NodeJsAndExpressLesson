@@ -40,6 +40,10 @@ var runGeoQuery = function(req, res) {
 	});
 };
 module.exports.hotelsGetAll = function(request, response) {
+	
+	console.log('GET the hotels');
+	console.log(request.query);
+	
 	var offset = 0;
 	var count = 5;
 	var maxCount = 10;
@@ -213,4 +217,23 @@ module.exports.hotelsUpdateOne = function(req, res){
 	       });
 		}
 	});
+};
+
+module.exports.hotelsDeleteOne = function(req, res) {
+	
+	var hotelId = req.params.hotelId;
+	Hotel
+		.findByIdAndRemove(hotelId)
+		.exec(function(err, hotel){
+			if(err){
+				res
+					.status(404)
+					.json(err);
+			} else {
+				console.log("Hotel deleted, id: ", hotelId);
+				res 
+					.status(204)
+					.json();
+			}
+		});
 };
