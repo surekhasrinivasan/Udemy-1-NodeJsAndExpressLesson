@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="meanhotel">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,8 @@
 </head>
 <body>
     
-    <h1>MEAN hotel homepage</h1>
-    
+    <div ng-view></div>
+    <h2>hello</h2>
     <footer class="footer">
         <div class="container">
             <p class="text-muted text-center">
@@ -25,5 +25,9 @@
     </footer>
     
     <script src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="angular-app/app.js"></script>
+    <script src="angular-app/hotel-list/hotel-list-controller.js"></script>
 </body>
 </html>
