@@ -1,8 +1,11 @@
 /*global angular*/
 angular.module('meanhotel').controller('HotelsController', HotelsController);
 
-function HotelsController() {
+function HotelsController(hotelDataFactory) {
     var vm = this;
     vm.title = 'MEAN Hotel App';
-    vm.name = "Surekha";
+    hotelDataFactory.hotelList().then(function(response){
+        console.log(response);
+        vm.hotels = response.data;
+    });
 }
