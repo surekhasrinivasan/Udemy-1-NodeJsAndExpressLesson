@@ -1,10 +1,9 @@
-/*global angular*/
-angular.module('meanhotel', ['ngRoute']).config(config);
-//angular.module('meanhotel', ['ngRoute']).config(config).run(run);
+/*global angular HotelsController HotelController*/
+angular.module('meanhotel', ['ngRoute', 'angular-jwt']).config(config);
 
 function config($routeProvider) {
     $routeProvider
-    .when('./', {
+    .when('/', {
         templateUrl: 'angular-app/hotel-list/hotels.html',
         controller: HotelsController,
         controllerAs:'vm'
