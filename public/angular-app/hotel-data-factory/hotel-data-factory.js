@@ -21,11 +21,11 @@ function hotelDataFactory($http) {
     }
     
     function complete(response) {
-        return response.data;
+        //return response.data;
+        return response;
     }
     
     function failed(error) {
         console.log(error.statusText);
-        
     }
 }

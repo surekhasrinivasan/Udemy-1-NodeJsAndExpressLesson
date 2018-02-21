@@ -7,9 +7,8 @@ function HotelController($route, $routeParams, hotelDataFactory) {
     
     hotelDataFactory.hotelDisplay(id).then(function(response){
         console.log(response);
-        vm.hotel = response;
-        vm.stars = _getStarRating(response.stars);
-        //vm.stars=response.stars;
+        vm.hotel = response.data;
+        vm.stars = _getStarRating(response.data.stars);
     });
     
     function _getStarRating(stars) {
