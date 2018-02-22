@@ -3,7 +3,7 @@ angular.module('meanhotel', ['ngRoute', 'angular-jwt']).config(config);
 
 function config($routeProvider) {
     $routeProvider
-    .when('/', {
+    .when('/hotels', {
         templateUrl: 'angular-app/hotel-list/hotels.html',
         controller: HotelsController,
         controllerAs:'vm'

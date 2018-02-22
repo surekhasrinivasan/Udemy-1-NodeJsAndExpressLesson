@@ -40,7 +40,7 @@ var runGeoQuery = function(req, res) {
 	});
 };
 module.exports.hotelsGetAll = function(request, response) {
-	
+	console.log('Requested by: '+ request.user);
 	console.log('GET the hotels');
 	console.log(request.query);
 	
