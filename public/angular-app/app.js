@@ -1,9 +1,9 @@
-/*global angular HotelsController HotelController*/
+/*global angular HotelsController HotelController RegisterController*/
 angular.module('meanhotel', ['ngRoute', 'angular-jwt']).config(config);
 
 function config($routeProvider) {
     $routeProvider
-    .when('/hotels', {
+    .when('/', {
         templateUrl: 'angular-app/hotel-list/hotels.html',
         controller: HotelsController,
         controllerAs:'vm'
@@ -12,5 +12,10 @@ function config($routeProvider) {
         templateUrl: 'angular-app/hotel-display/hotel.html',
         controller: HotelController,
         controllerAs:'vm'
+    })
+    .when('/register', {
+        templateUrl: 'angular-app/register/register.html',
+        controller: RegisterController,
+        controllerAs: 'vm'
     });
 }
