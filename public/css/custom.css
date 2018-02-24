@@ -5,7 +5,11 @@ html {
 }
 body {
     /*Margin bottom by footer height */
+    margin-top: 120px;
     margin-bottom: 90px;
+}
+.container {
+    padding-top: 0 0 0 0;
 }
 .padded {
     padding-top: 30px;
